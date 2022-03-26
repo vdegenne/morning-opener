@@ -16,11 +16,11 @@
       }
     </style>
 
-    <a href="./numbers-track">numbers-track</a>
-    <a href="./english-random">english-random</a>
+    <english-random id=app></english-random>
+
     <mwc-snackbar id=snackbar></mwc-snackbar>
 
-    <script type=module src="./app.js"></script>
+    <script type=module src="../app.js"></script>
     <script>
       window.toast = function (labelText, timeoutMs = 4000) {
         snackbar.labelText = labelText;
