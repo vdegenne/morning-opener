@@ -7391,6 +7391,27 @@ EnglishRandom = __decorate([
     n$8('english-random')
 ], EnglishRandom);
 
+let RandomNumber = class RandomNumber extends s$1 {
+    render() {
+        const random = ~~(Math.random() * 10000);
+        return $ `
+    <mwc-button raised @click=${() => this.requestUpdate()} style="margin-top:24px;">${random}</mwc-button>
+    `;
+    }
+};
+RandomNumber.styles = r$3 `
+  :host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  `;
+RandomNumber = __decorate([
+    n$8('random-number')
+], RandomNumber);
+
 /**
  * @license
  * Copyright 2018 Google Inc.

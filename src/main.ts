@@ -6,6 +6,7 @@ import '@material/mwc-icon-button'
 
 import './numbers-track'
 import './english-random'
+import './random-number'
 // import '@material/mwc-icon-button'
 // import '@material/mwc-dialog'
 import '@material/mwc-textfield'
