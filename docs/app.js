@@ -7395,8 +7395,11 @@ let RandomNumber = class RandomNumber extends s$1 {
     render() {
         const random = ~~(Math.random() * 10000);
         return $ `
-    <mwc-button raised @click=${() => this.requestUpdate()} style="margin-top:24px;">${random}</mwc-button>
+    <div style="font-size:3em;font-weight:bold">${random}</div>
     `;
+    }
+    firstUpdated(_changedProperties) {
+        this.addEventListener('click', () => this.requestUpdate());
     }
 };
 RandomNumber.styles = r$3 `
@@ -7406,11 +7409,44 @@ RandomNumber.styles = r$3 `
     height: 100vh;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    user-select: none;
   }
   `;
 RandomNumber = __decorate([
     n$8('random-number')
 ], RandomNumber);
+
+let RandomDirection = class RandomDirection extends s$1 {
+    constructor() {
+        super(...arguments);
+        this.arrows = ['⬅️', '↖️', '⬆️', '↗️', '➡️', '↘️', '⬇️', '↙️'];
+    }
+    render() {
+        const arrow = this.arrows[Math.floor(Math.random() * this.arrows.length)];
+        return $ `${arrow}`;
+    }
+    firstUpdated() {
+        window.addEventListener('click', () => this.requestUpdate());
+    }
+};
+RandomDirection.styles = r$3 `
+  :host {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+  }
+  `;
+RandomDirection = __decorate([
+    n$8('random-direction')
+], RandomDirection);
 
 /**
  * @license

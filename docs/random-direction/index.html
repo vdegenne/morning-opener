@@ -14,22 +14,13 @@
         font-family: Roboto;
         --mdc-theme-primary: black;
       }
-      a {
-        display: block;
-        padding: 12px;
-        text-decoration: none;
-      }
     </style>
 
-    <a href="https://humanbenchmark.com/dashboard" target='_blank'>humanbenchmark</a>
-    <a href="./random-number" target='_blank'>random-number</a>
-    <a href="./random-direction" target='_blank'>random-direction</a>
-    <a href="./numbers-track" target='_blank'>numbers-track</a>
-    <a href="./english-random" target='_blank'>english-random</a>
-    <a>4 seasons</a>
+    <random-direction id=app></random-direction>
+
     <mwc-snackbar id=snackbar></mwc-snackbar>
 
-    <script type=module src="./app.js"></script>
+    <script type=module src="../app.js"></script>
     <script>
       window.toast = function (labelText, timeoutMs = 4000) {
         snackbar.labelText = labelText;
